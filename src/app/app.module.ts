@@ -16,7 +16,6 @@ import { MaterialModule } from './material/material.module';
 import { EditProfileDialogComponent } from './core/edit-profile-dialog/edit-profile-dialog.component';
 import { SignInComponent } from './core/sign-in/sign-in.component';
 import { CreateAccountComponent } from './core/create-account/create-account.component';
-import { MyTeamModule } from './my-team/my-team.module';
 
 @NgModule({
   declarations: [
@@ -34,7 +33,6 @@ import { MyTeamModule } from './my-team/my-team.module';
     MaterialModule,
     FightersModule,
     TeamsModule,
-    MyTeamModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     AngularFirestoreModule,

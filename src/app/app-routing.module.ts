@@ -12,7 +12,6 @@ const routes: Routes = [
   { path: 'sign-in', component: SignInComponent },
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
   { path: 'create-account', component: CreateAccountComponent},
-  { path: 'my-team', loadChildren: () => import('./my-team/my-team.module').then(m => m.MyTeamModule), canActivate: [AuthGuard] }
 ];
 
 @NgModule({

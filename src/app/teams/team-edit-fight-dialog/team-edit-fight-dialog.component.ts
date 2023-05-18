@@ -1,6 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { TeamsService } from '../services/teams.service';
-import { MyTeamEditFightDialogComponent } from 'src/app/my-team/my-team-edit-fight-dialog/my-team-edit-fight-dialog.component';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Fight } from 'src/app/fighters/models/fight';
@@ -17,7 +16,7 @@ export class TeamEditFightDialogComponent implements OnInit {
     public teamsService: TeamsService,
     private fb: FormBuilder, 
     @Inject(MAT_DIALOG_DATA) public data: {fight: Fight},
-    public dialogRef: MatDialogRef<MyTeamEditFightDialogComponent>,
+    public dialogRef: MatDialogRef<TeamEditFightDialogComponent>,
     ) { }
 
   ngOnInit(): void {
