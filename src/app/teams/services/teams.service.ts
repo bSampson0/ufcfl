@@ -130,7 +130,7 @@ export class TeamsService {
   }
   
   addFighter(fighter: Fighter, date?: Date) {
-    const rosters = this.selectedTeamStore.value.rosters;
+    const rosters = this.myTeamStore.value.rosters;
     const date_signed = date ? date : new Date();
     const roster: Roster = {
       date_released: null,
@@ -142,7 +142,7 @@ export class TeamsService {
     roster.fighter = this.resetFighterData(roster.fighter)
     rosters.push(roster)
     try {      
-      this.afs.collection<Team>('teams', ref => ref.where('team_id', '==', this.selectedTeamStore.value.team_id))
+      this.afs.collection<Team>('teams', ref => ref.where('team_id', '==', this.myTeamStore.value.team_id))
         .get()
         .subscribe((querySnapshot) => {
           querySnapshot.forEach((doc) => {
@@ -155,11 +155,11 @@ export class TeamsService {
   }
 
   dropFighter(fighter: Fighter, date?: Date) {
-    const rosters = this.selectedTeamStore.value.rosters;
+    const rosters = this.myTeamStore.value.rosters;
     const rosterIndex = rosters.findIndex((roster: Roster) => roster.fighter.fighter_id == fighter.fighter_id);
     rosters[rosterIndex].date_released = date ? date : new Date();
     try {      
-      this.afs.collection<Team>('teams', ref => ref.where('team_id', '==', this.selectedTeamStore.value.team_id))
+      this.afs.collection<Team>('teams', ref => ref.where('team_id', '==', this.myTeamStore.value.team_id))
         .get()
         .subscribe((querySnapshot) => {
           querySnapshot.forEach((doc) => {
