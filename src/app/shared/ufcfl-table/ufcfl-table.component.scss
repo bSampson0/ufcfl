@@ -1,0 +1,25 @@
+tr.cdk-header-row {
+    height: 35px;
+}
+
+tr.mat-row {
+    height: 40px;
+}
+
+th.cdk-header-cell:not(:first-child) {
+    padding-left: 10px;
+    border-left: 1px solid #515d64;
+}
+
+th.cdk-header-cell:not(:last-child) {
+    padding-right: 10px;
+}
+
+td.cdk-cell:not(:first-child) {
+    padding-left: 10px;
+    border-left: 1px solid #515d64;
+}
+
+td.cdk-cell:not(:last-child) {
+    padding-right: 10px;
+}

@@ -1,0 +1,9 @@
+<div class="team-roster" *ngIf="teamsService.$selectedTeam | async as team">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>{{team.team_name}}</mat-card-title>
+            <mat-card-subtitle>Active Roster | Double click on row to view fighter's fights.</mat-card-subtitle>
+        </mat-card-header>
+        <app-roster-table [dataSource]="fighters"></app-roster-table>
+    </mat-card>
+</div>

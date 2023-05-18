@@ -1,0 +1,22 @@
+.create-account {
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+
+    .account-card {
+        max-width: 400px;
+
+        .login {
+            text-align: right;
+
+            a {
+                color: inherit;
+            }
+        }
+        
+        .mat-form-field {
+            width: 100%;
+        }
+    }
+
+}

@@ -1,0 +1,31 @@
+.fights-container {
+    padding: 2rem;
+
+    .fighter-card {
+        margin-bottom: 1rem;
+    }
+
+    .mat-card-avatar {
+        height: 80px !important;
+        width: 80px !important;
+        object-position: top !important;
+    }
+
+    .mat-card-heaer-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .fighter-info {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+
+    }
+
+    .info {
+        padding: 20px;
+        background: #333;
+    }
+}

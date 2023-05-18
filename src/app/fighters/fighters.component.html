@@ -1,0 +1,17 @@
+<ng-container *ngIf="(fightersService.$fighters | async) as fighters">
+    <div class="fighters" *ngIf="fighters.length > 0; else loading">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Fighters</mat-card-title>
+                <mat-card-subtitle>UFCFL | Double click fighter to see their fights.</mat-card-subtitle>
+            </mat-card-header>
+            <app-fighters-table [dataSource]="fighters"></app-fighters-table>
+        </mat-card>
+        <p>Don't see a fighter? Add fighter with their sherdog URL.</p>
+        <button mat-flat-button color="primary" (click)="addFighterDialog()">Add Fighter to Application</button>
+    </div>
+</ng-container>
+
+<ng-template #loading>
+    <app-loading></app-loading>
+</ng-template>

@@ -1,0 +1,35 @@
+<div class="create-account">
+    <mat-card class="account-card">
+        <form [formGroup]="form">
+        <mat-card-title>
+            <div style="text-align: center;">Create Your Account</div>
+        </mat-card-title>
+        <mat-card-subtitle>
+            <div style="text-align: center;">
+                Create your Fantasy UFC account!
+            </div>
+        </mat-card-subtitle>
+        <mat-card-content>
+            <mat-form-field appearance="outline" color="accent">
+                <mat-label>Username</mat-label>
+                <input matInput formControlName="username">
+              </mat-form-field>
+            <mat-form-field appearance="outline" color="accent">
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="email">
+              </mat-form-field>
+              <mat-form-field appearance="outline" color="accent">
+                <mat-label>Password</mat-label>
+                <input matInput formControlName="password">
+              </mat-form-field>
+
+              <div class="login">
+                Already have an account? <span><a href="/sign-in">Login here.</a></span>
+              </div>
+        </mat-card-content>
+
+           <button [disabled]="form.invalid" mat-flat-button color="accent" (click)="authService.signUp(form.value.email, form.value.password, form.value.username)">Create Account</button>
+
+    </form>
+    </mat-card>
+</div>

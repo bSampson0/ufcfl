@@ -1,0 +1,58 @@
+.fighters-table {
+    width: 100%;
+    min-width: 500px;
+
+    .btn-group {
+        display: flex;
+        justify-content: space-between;
+        gap: 4px;
+    }
+
+    .filter {
+        padding: 0rem 1rem;
+    }
+
+    .name-container {
+        display: flex;
+        align-items: center;
+
+        .fighter-img {
+            border-radius: 50%;
+            height: 30px;
+            width: 30px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin-right: 10px;
+        }        
+    }
+
+    tr.mat-header-row {
+        height: 35px;
+    }
+
+    tr.mat-row {
+        height: 40px;
+    }
+
+    th.mat-header-cell:not(:first-child) {
+        padding-left: 10px;
+        border-left: 1px solid #515d64;
+    }
+
+    th.mat-header-cell:not(:last-child) {
+        padding-right: 10px;
+    }
+
+    td.mat-cell:not(:first-child) {
+        padding-left: 10px;
+        border-left: 1px solid #515d64;
+    }
+
+    td.mat-cell:not(:last-child) {
+        padding-right: 10px;
+    }
+
+    .mat-form-field {
+        width: 50%;
+    }
+}

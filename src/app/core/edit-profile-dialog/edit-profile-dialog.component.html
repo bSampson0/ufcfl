@@ -1,0 +1,16 @@
+<div class="edit-profile">
+    <form [formGroup]="form">    
+        <div class="profile-title" mat-dialog-title>
+            Edit Profile
+        </div>
+        <mat-form-field floatLabel="always" class="full-width" appearance="outline" color="accent">
+            <mat-label>Username</mat-label>
+            <input type="text" matInput maxlength="35" formControlName="username">
+        </mat-form-field>
+        <mat-form-field floatLabel="always" class="full-width" appearance="outline" color="accent">
+            <mat-label>Photo Url</mat-label>
+            <input type="text" matInput formControlName="photoURL">
+        </mat-form-field>
+        <button mat-flat-button color="accent" (click)="this.auth.updateUserProfile(form.value.username, form.value.photoURL)">update profile</button>
+    </form>
+</div>

@@ -1,0 +1,28 @@
+<div mat-dialog-title>
+    Add Fighter
+</div>
+<ng-template #addFighter>
+    <div mat-dialog-content>
+        <p>Enter the sherdog fighter profile url.</p>
+        <mat-form-field>
+            <input matInput [formControl]="fighterUrl" placeholder="Fighter URL">
+        </mat-form-field>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-raised-button (click)="fightersService.searchFighterToAdd(fighterUrl.value)">Add Fighter</button>
+    </div>
+</ng-template>
+<div class="fighter-details" mat-dialog-content *ngIf="fightersService.$fightToAdd | async as fighter">
+    <mat-card *ngIf="fighter.name; else addFighter">
+        <mat-card-title>
+            {{fighter.name}}
+        </mat-card-title>
+        <mat-card-content>
+            Is this the correct fighter to add?
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button (click)="fightersService.addFighterToApp()">Yes</button>
+            <button mat-flat-button (click)="onNoClick()">No</button>
+        </mat-card-actions>
+    </mat-card>
+</div>

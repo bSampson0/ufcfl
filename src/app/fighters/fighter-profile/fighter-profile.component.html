@@ -1,0 +1,40 @@
+<div class="fights-container" *ngIf="(this.fightersService.$selectedFighter | async) as fighter">
+        <mat-card class="fighter-card">
+          <mat-card-header>
+            <img mat-card-avatar [src]="fighter.image_url">
+            <mat-card-title>
+              {{fighter.name}}
+            </mat-card-title>
+            <mat-card-subtitle>
+              {{fighter.nickname}} <br>
+              {{fighter.wins_total}} /  {{fighter.losses_total}} / {{fighter.nc}}
+            </mat-card-subtitle>
+          </mat-card-header>
+          <hr>
+          <mat-card-content>
+            <div class="fighter-info">
+              <div class="info">
+                <div class="title">Division:</div>  {{fighter.weight_class}}
+             </div>
+              <div class="info">
+                 <div class="title">Association:</div>  {{fighter.association}}
+              </div>
+              <div class="info">
+                 <div class="title">Age:</div>  {{fighter.age}}
+              </div>
+              <div class="info">
+                 <div class="title">Height:</div>  {{fighter.height}}
+              </div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+    
+     
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>Past Fights</mat-card-title>
+          </mat-card-header>
+          <app-fights-table [dataSource]="fighter.fights"></app-fights-table>
+        </mat-card>
+  </div>
+  

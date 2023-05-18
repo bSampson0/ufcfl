@@ -1,0 +1,23 @@
+<div class="ufcfl-table">
+    <table mat-table mat-sort [dataSource]="dataSource">
+        <ng-container
+            [matColumnDef]="tableData"
+            *ngFor="let dataSource of objectKeys(columnHeader)">
+            <ng-container [ngSwitch]="tableData">
+                <ng-container *ngSwitchDefault>
+                    <th cdk-header-cell *cdkHeaderCellDef>
+                        <div mat-sort-header>
+                            {{ columnHeader[tableData] }}
+                        </div>
+                    </th>
+                    <td cdk-cell *cdkCellDef="let element">
+                        <div class="table-data" [innerHTML]="element[tableData] || '---'"></div>
+                    </td>
+                </ng-container>
+            </ng-container>
+        </ng-container>
+
+        <tr class="headers" cdk-header-row *cdkHeaderRowDef="objectKeys(columnHeader); sticky: true;"></tr>
+        <tr cdk-row *cdkRowDef="let row; columns: objectKeys(columnHeader)"></tr>
+    </table>
+</div>

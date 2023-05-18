@@ -1,0 +1,77 @@
+<table mat-table [dataSource]="dataSource" class="my-team-table" matSort>
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element"> 
+        <div class="name-container">
+            <div class="fighter-img" [style.background-image]="'url('+element.image_url+')'"></div>
+            <div class="name">
+                {{element.name}}
+            </div>
+        </div>
+    </td>
+    </ng-container>
+
+    <ng-container matColumnDef="weight_class">
+        <th mat-header-cell *matHeaderCellDef> Division </th>
+        <td mat-cell *matCellDef="let element"> 
+            <mat-chip-list>
+                <mat-chip color="accent">
+                    {{element.weight_class}}
+                </mat-chip> 
+            </mat-chip-list>
+        </td>
+      </ng-container>
+  
+    <ng-container matColumnDef="wins_total">
+      <th mat-header-cell *matHeaderCellDef> Wins </th>
+      <td mat-cell *matCellDef="let element"> {{element.wins_total}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="losses_total">
+      <th mat-header-cell *matHeaderCellDef> Losses </th>
+      <td mat-cell *matCellDef="let element"> {{element.losses_total}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="nc">
+      <th mat-header-cell *matHeaderCellDef> NC </th>
+      <td mat-cell *matCellDef="let element"> {{element.nc}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="wins_ko_sub">
+        <th mat-header-cell *matHeaderCellDef> KOs/Subs </th>
+        <td mat-cell *matCellDef="let element"> {{element.wins_ko_sub}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="top_ten">
+        <th mat-header-cell *matHeaderCellDef> Top Ten </th>
+        <td mat-cell *matCellDef="let element"> {{element.top_ten || 0}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="title_fights">
+        <th mat-header-cell *matHeaderCellDef> Title Wins </th>
+        <td mat-cell *matCellDef="let element"> {{element.title_fights || 0}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="total_fights">
+        <th mat-header-cell *matHeaderCellDef> Total Fights </th>
+        <td mat-cell *matCellDef="let element"> {{element.total_fights}} </td>
+      </ng-container>
+
+    <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef>  </th>
+        <td mat-cell *matCellDef="let element">
+            <div class="btn-group">
+                <!-- <button class="table-btn"
+                (click)="viewFighter(element.fighter_id)" mat-raised-button color="accent">View Fighter</button> -->
+                <button class="table-btn" mat-mini-fab color="primary" (click)="myTeamService.openConfirmationDialog(myTeamService.confirmDropMessage, false, element)">
+                  <mat-icon>delete</mat-icon>
+                </button>
+            </div>
+        </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" (dblclick)="onDoubleClick(row)"></tr>
+    
+</table>
+

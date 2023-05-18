@@ -1,0 +1,29 @@
+<mat-toolbar color="primary">
+    <!-- <button mat-icon-button class="menu-icon" aria-label="icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button> -->
+    <span class="logo">Fantasy UFC</span>
+    <div *ngIf="auth.isLoggedIn">
+      <button (click)="router.navigate(['/profile'])" mat-button class="logout-btn">
+        Profile
+      </button>
+      <button (click)="router.navigate(['/fighters'])" mat-button class="logout-btn">
+        Fighters
+      </button>
+      <button (click)="router.navigate(['/teams'])" mat-button class="logout-btn">
+        Standings
+      </button>
+      <!-- <button (click)="router.navigate(['/my-team'])" mat-button class="logout-btn">
+        My Team
+      </button> -->
+    </div>
+    <span class="spacer"></span>
+    <button *ngIf="auth.isLoggedIn; else login" (click)="auth.signOut()" mat-button  class="logout-btn">
+      Logout
+    </button>
+    <ng-template #login>
+      <button (click)="router.navigate(['/sign-in'])" mat-button class="logout-btn">
+        Login
+      </button>
+    </ng-template>
+  </mat-toolbar>

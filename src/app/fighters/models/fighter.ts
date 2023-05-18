@@ -1,0 +1,32 @@
+import { Fight } from "./fight";
+
+export interface Fighter {
+    age: string,
+    association: string,
+    banked_flag: boolean,
+    birthday: string,
+    fight_style: string,
+    fighter_id: number,
+    height: string,
+    image_url: string,
+    locality: string,
+    name: string,
+    nationality: string,
+    nc: number,
+    nickname: string,
+    weight: string,
+    weight_class: string,
+    wins_decisions: number,
+    wins_knockouts: number,
+    wins_submissions: number,
+    wins_total: number,
+    losses_decisions: number,
+    losses_knockouts: number,
+    losses_submissions: number,
+    losses_total: number,
+    wins_ko_sub: number,
+    top_ten: number,
+    title_fights: number,
+    total_fights: number,
+    fights: Fight[]
+  }

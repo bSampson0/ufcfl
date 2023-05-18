@@ -1,0 +1,15 @@
+<ng-container *ngIf="teamsService.$teams | async as teams">
+    <div class="teams" *ngIf="teams.length > 0; else loading">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>Standings</mat-card-title>
+                    <mat-card-subtitle>Double click on row to see team's roster.</mat-card-subtitle>
+                </mat-card-header>
+                <app-teams-table [teams]="teams"></app-teams-table>
+            </mat-card>
+        </div>
+</ng-container>
+
+<ng-template #loading>
+    <app-loading></app-loading>
+</ng-template>
