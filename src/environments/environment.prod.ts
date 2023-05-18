@@ -1,12 +1,12 @@
 export const environment = {
   production: true,
   firebaseConfig: {
-    apiKey: process.env["FB_API_KEY"],
-    authDomain: process.env["FB_AUTH_DOMAIN"],
-    databaseURL: process.env["FB_DB_URL"],
-    projectId: process.env["FB_PROJECT_ID"],
-    storageBucket: process.env["FB_STORAGE_BUCKET"],
-    messagingSenderId: process.env["FB_MESSAGING_SENDER_ID"],
-    appId: process.env["FB_APP_ID"]
+    apiKey: "AIzaSyD3Cwm9EUkf4M0NtqDXPz8nfwZzkFpwHdg",
+    authDomain: "ufc-fantasy-350a5.firebaseapp.com",
+    databaseURL: "https://ufc-fantasy-350a5-default-rtdb.firebaseio.com",
+    projectId: "ufc-fantasy-350a5",
+    storageBucket: "ufc-fantasy-350a5.appspot.com",
+    messagingSenderId: "711964575969",
+    appId: "1:711964575969:web:819fe33ee5d28739b8cfa0"
   }
 };
